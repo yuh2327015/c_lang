@@ -47,7 +47,7 @@ int main()
 	{
 		printf("%c", map[i]);
 		i = i+1;
-		if (i % 30 == 0)
+		if (i % 31 == 0)
 		{
 			printf("\n");
 		}
