@@ -176,7 +176,7 @@ int how()
 	return 0;	
 }
 
-int exit()
+int ext()
 {
     char screen3[330];
     int i = 0;
@@ -191,8 +191,19 @@ int exit()
         screen3[i] = '-';
         i++;
     }
+    //exit 1 yes 2 no
     screen3[31] = '\n';
     screen3[32] = '|';
+    screen3[46] = 'E';
+    screen3[47] = 'X';
+    screen3[48] = 'I';
+    screen3[49] = 'T';
+    screen3[63] = '|';
+    screen3[64] = '\n';
+    screen3[65] = '|';
+    screen3[96] = '|';
+    screen3[97] = '\n';
+    screen3[98] = '|';
 
     printf("%s\ninput pls>", screen3);
     return 0;
@@ -210,7 +221,16 @@ int main()
 		scanf("%d",&input);
 		if(input==3)
 		{
-			game_state=0;
+			ext();
+            scanf("%d",&input);
+            if(input==1)
+            {
+                game_state = 0;
+            }
+            else
+            {
+                title();
+            }
 		}
 		if(input==2)
 		{
