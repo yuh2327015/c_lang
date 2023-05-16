@@ -1,0 +1,13 @@
+git clone https://github.com/yuh2327015/c_lang.git   
+
+붙여넣기 = shift insert 
+vim . 하면 파일선택 가능
+git config --global user.email "www9216@naver.com"
+git config --global user.name "yuh2327015"
+
+git status
+git add = 변경된 파일을 추적하고 인덱스에 추가하는 명령어
+git commit = 변경 사항을 컴퓨터 자체에 저장하는 명령어
+git push = git hub 저장소에 저장시키는 명령어
+
+rm -rf 파일명/ - 파일 자체 지우기 
