@@ -6,25 +6,25 @@
 #define MAX_ENHANCEMENT_LEVEL 10
 
 int showLoadingScreen() {
-    printf("°­È­ ÁßÀÔ´Ï´Ù...");
+    printf("ê°•í™” ì¤‘ì…ë‹ˆë‹¤...");
     fflush(stdout);
     usleep(1000000);
     printf("\n");
 }
 
 int showMainMenu() {
-    printf("¸ŞÀÎ È­¸é\n");
-    printf("1. °ÔÀÓ ½ÃÀÛ\n");
-    printf("2. °ÔÀÓ ¼³¸í\n");
-    printf("3. °ÔÀÓ Á¾·á\n");
+    printf("ë©”ì¸ í™”ë©´\n");
+    printf("1. ê²Œì„ ì‹œì‘\n");
+    printf("2. ê²Œì„ ì„¤ëª…\n");
+    printf("3. ê²Œì„ ì¢…ë£Œ\n");
 }
 
 int showGameDescription() {
-    printf("°ÔÀÓ ¼³¸í\n");
-    printf("¿£ÅÍÅ°¸¦ ´©¸£¸é °­È­°¡ µÇ´Â °ÔÀÓÀÔ´Ï´Ù.\n");
-    printf("°­È­ ·¹º§À» ¿Ã¸®°Å³ª °­È­¿¡ ½ÇÆĞÇÏ¸é ÆÄ±« È®·üÀÌ Áõ°¡ÇÕ´Ï´Ù.\n");
-    printf("°­È­ ·¹º§ÀÌ %d¿¡ µµ´ŞÇÏ¸é ÃÖ´ë °­È­ ·¹º§¿¡ µµ´ŞÇß´Ù´Â ¸Ş½ÃÁö°¡ Ãâ·ÂµË´Ï´Ù.\n", MAX_ENHANCEMENT_LEVEL);
-    printf("Àåºñ°¡ ÆÄ±«µÇ¸é °ÔÀÓÀÌ Á¾·áµË´Ï´Ù.\n");
+    printf("ê²Œì„ ì„¤ëª…\n");
+    printf("ì—”í„°í‚¤ë¥¼ ëˆ„ë¥´ë©´ ê°•í™”ê°€ ë˜ëŠ” ê²Œì„ì…ë‹ˆë‹¤.\n");
+    printf("ê°•í™”ì— ì„±ê³µí• ìˆ˜ë¡ ì„±ê³µí™•ë¥ ì´ ì¤„ì–´ë“¤ê³  ì‹¤íŒ¨í™•ë¥ , íŒŒê´´í™•ë¥ ì´ ì˜¬ë¼ê°‘ë‹ˆë‹¤..\n");
+    printf("ê°•í™” ë ˆë²¨ì´ %dì— ë„ë‹¬í•˜ë©´ ìµœëŒ€ ê°•í™” ë ˆë²¨ì— ë„ë‹¬í–ˆë‹¤ëŠ” ë©”ì‹œì§€ê°€ ì¶œë ¥ë©ë‹ˆë‹¤.\n", MAX_ENHANCEMENT_LEVEL);
+    printf("ì¥ë¹„ê°€ íŒŒê´´ë˜ë©´ ê²Œì„ì´ ì¢…ë£Œë©ë‹ˆë‹¤.\n");
 }
 
 int main() {
@@ -38,22 +38,22 @@ int main() {
     int choice;
     while (1) {
         showMainMenu();
-        printf("¼±ÅÃÇÏ¼¼¿ä: ");
+        printf("ì„ íƒí•˜ì„¸ìš”: ");
         scanf("%d", &choice);
 
         switch (choice) {
         case 1:
             while (1) {
                 printf("-----------------------------------------\n");
-                printf("| ÇöÀç °­È­ ·¹º§: %d\n", enhancementLevel);
-                printf("| ¼º°ø È®·ü: %d%%\n", successChance[enhancementLevel]);
-                printf("| ½ÇÆĞ È®·ü: %d%%\n", 100 - successChance[enhancementLevel]);
-                printf("| ÆÄ±« È®·ü: %d%%\n", destructionChance[enhancementLevel]);
-                printf("| °­È­ÇÏ½Ã°Ú½À´Ï±î? (Enter Å°·Î °­È­):\n");
+                printf("| í˜„ì¬ ê°•í™” ë ˆë²¨: %d\n", enhancementLevel);
+                printf("| ì„±ê³µ í™•ë¥ : %d%%\n", successChance[enhancementLevel]);
+                printf("| ì‹¤íŒ¨ í™•ë¥ : %d%%\n", 100 - successChance[enhancementLevel]);
+                printf("| íŒŒê´´ í™•ë¥ : %d%%\n", destructionChance[enhancementLevel]);
+                printf("| ê°•í™”í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (Enter í‚¤ë¡œ ê°•í™”):\n");
                 printf("-----------------------------------------\n");
 
-                getchar();  // ¹öÆÛ ºñ¿ì±â
-                getchar();  // ¿£ÅÍÅ° ÀÔ·Â ´ë±â
+                getchar();  // ë²„í¼ ë¹„ìš°ê¸°
+                getchar();  // ì—”í„°í‚¤ ì…ë ¥ ëŒ€ê¸°
 
                 showLoadingScreen();
 
@@ -62,54 +62,54 @@ int main() {
                 if (enhancementLevel < 5) {
                     if (result < successChance[enhancementLevel]) {
                         enhancementLevel++;
-                        printf("°­È­ ¼º°ø!\n");
+                        printf("ê°•í™” ì„±ê³µ!\n");
                     }
                     else if (result >= successChance[enhancementLevel] && result < successChance[enhancementLevel] + destructionChance[enhancementLevel]) {
                         enhancementLevel = 0;
-                        printf("Àåºñ°¡ ÆÄ±«µÇ¾ú½À´Ï´Ù!\n");
+                        printf("ì¥ë¹„ê°€ íŒŒê´´ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
                         break;
                     }
                     else {
-                        printf("°­È­ ½ÇÆĞ!\n");
+                        printf("ê°•í™” ì‹¤íŒ¨!\n");
                     }
                 }
                 else {
                     if (result < successChance[enhancementLevel]) {
                         enhancementLevel++;
-                        printf("°­È­ ¼º°ø!\n");
+                        printf("ê°•í™” ì„±ê³µ!\n");
                     }
                     else if (result >= successChance[enhancementLevel] && result < successChance[enhancementLevel] + destructionChance[enhancementLevel]) {
                         enhancementLevel = 0;
-                        printf("Àåºñ°¡ ÆÄ±«µÇ¾ú½À´Ï´Ù!\n");
+                        printf("ì¥ë¹„ê°€ íŒŒê´´ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
                         break;
                     }
                     else {
                         enhancementLevel--;
-                        printf("°­È­ ½ÇÆĞ!\n");
+                        printf("ê°•í™” ì‹¤íŒ¨!\n");
 
                         if (enhancementLevel < 0) {
-                            printf("Àåºñ°¡ ÆÄ±«µÇ¾ú½À´Ï´Ù!\n");
+                            printf("ì¥ë¹„ê°€ íŒŒê´´ë˜ì—ˆìŠµë‹ˆë‹¤!\n");
                             break;
                         }
                     }
                 }
 
                 if (enhancementLevel >= MAX_ENHANCEMENT_LEVEL) {
-                    printf("ÃÖ´ë °­È­ ·¹º§¿¡ µµ´ŞÇß½À´Ï´Ù!\n");
+                    printf("ìµœëŒ€ ê°•í™” ë ˆë²¨ì— ë„ë‹¬í–ˆìŠµë‹ˆë‹¤!\n");
                     break;
                 }
             }
             break;
         case 2:
             showGameDescription();
-            getchar();  // ¹öÆÛ ºñ¿ì±â
-            getchar();  // ¿£ÅÍÅ° ÀÔ·Â ´ë±â
+            getchar();  // ë²„í¼ ë¹„ìš°ê¸°
+            getchar();  // ì—”í„°í‚¤ ì…ë ¥ ëŒ€ê¸°
             break;
         case 3:
-            printf("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+            printf("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
             return 0;
         default:
-            printf("Àß¸øµÈ ¼±ÅÃÀÔ´Ï´Ù. ´Ù½Ã ¼±ÅÃÇÏ¼¼¿ä.\n");
+            printf("ì˜ëª»ëœ ì„ íƒì…ë‹ˆë‹¤. ë‹¤ì‹œ ì„ íƒí•˜ì„¸ìš”.\n");
             break;
         }
     }
