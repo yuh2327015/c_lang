@@ -13,18 +13,22 @@ int showLoadingScreen() {
 }
 
 int showMainMenu() {
-    printf("메인 화면\n");
+    printf("------------\n");
+    printf("메인 화면\n\n");
     printf("1. 게임 시작\n");
     printf("2. 게임 설명\n");
     printf("3. 게임 종료\n");
+    printf("------------\n");
 }
 
 int showGameDescription() {
-    printf("게임 설명\n");
-    printf("엔터키를 누르면 강화가 되는 게임입니다.\n");
-    printf("강화에 성공할수록 성공확률이 줄어들고 실패확률, 파괴확률이 올라갑니다..\n");
-    printf("강화 레벨이 %d에 도달하면 최대 강화 레벨에 도달했다는 메시지가 출력됩니다.\n", MAX_ENHANCEMENT_LEVEL);
-    printf("장비가 파괴되면 게임이 종료됩니다.\n");
+    printf("-------------------------------------------------------------------------------\n");
+    printf("                                게임 설명\n\n");
+    printf("                엔터키를 누르면 강화가 되는 게임입니다.                    \n");
+    printf("        강화에 성공할수록 성공확률이 줄어들고 실패확률, 파괴확률이 올라갑니다.\n");
+    printf("    강화 레벨이 %d에 도달하면 최대 강화 레벨에 도달했다는 메시지가 출력됩니다.\n", MAX_ENHANCEMENT_LEVEL);
+    printf("                장비가 파괴되면 게임이 종료됩니다.\n");
+    printf("-------------------------------------------------------------------------------\n");
 }
 
 int main() {
@@ -45,11 +49,11 @@ int main() {
         case 1:
             while (1) {
                 printf("-----------------------------------------\n");
-                printf("| 현재 강화 레벨: %d\n", enhancementLevel);
-                printf("| 성공 확률: %d%%\n", successChance[enhancementLevel]);
-                printf("| 실패 확률: %d%%\n", 100 - successChance[enhancementLevel]);
-                printf("| 파괴 확률: %d%%\n", destructionChance[enhancementLevel]);
-                printf("| 강화하시겠습니까? (Enter 키로 강화):\n");
+                printf("현재 강화 레벨: %d\n", enhancementLevel);
+                printf("성공 확률: %d%%\n", successChance[enhancementLevel]);
+                printf("실패 확률: %d%%\n", 100 - successChance[enhancementLevel]);
+                printf("파괴 확률: %d%%\n", destructionChance[enhancementLevel]);
+                printf("강화하시겠습니까? (Enter 키로 강화):\n");
                 printf("-----------------------------------------\n");
 
                 getchar();  // 버퍼 비우기
